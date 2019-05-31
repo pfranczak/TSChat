@@ -10,7 +10,7 @@ import InputWrapper from "./components/styled/Input";
 
 const StyledWrapper = styled.div`
     align-items: center;
-    background-color: ${props => props.theme.color.main};
+    background-color: ${props => props.theme.colors.main};
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, .25);
     display: flex;
     flex-flow: column;
@@ -18,7 +18,7 @@ const StyledWrapper = styled.div`
     justify-content: center;
     width: 100vw;
     
-    @media (min-width: ${sizes.medium}px) {
+    ${({theme: {media}}) => media.medium} {
         height: 400px;
         width: 600px;
     }

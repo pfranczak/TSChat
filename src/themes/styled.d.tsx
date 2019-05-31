@@ -2,10 +2,14 @@ import 'styled-components';
 
 declare module 'styled-components' {
     export interface DefaultTheme {
-        color: {
-            main: string,
-            secondary: string,
+        colors: {
+            [name: string]: string,
         },
-        main: string
+        font: {
+            [name: string]: number,
+        },
+        media: {
+            [name: string]: string,
+        }
     }
 }

@@ -1,19 +1,16 @@
-import {DefaultTheme} from "styled-components";
+import {DefaultTheme} from 'styled-components';
+import {colors, media, font} from './variables';
 
 const lightTheme: DefaultTheme = {
-    color: {
-        main: '#f5f5f5',
-        secondary: '#4a148c',
-    },
-    main: '#4a148c',
+    colors: colors.light,
+    font,
+    media,
 };
 
 const darkTheme: DefaultTheme = {
-    color: {
-        main: '#212121',
-        secondary: '#F3E5F5',
-    },
-    main: '#F3E5F5',
+    colors: colors.dark,
+    font,
+    media,
 };
 
 export {
