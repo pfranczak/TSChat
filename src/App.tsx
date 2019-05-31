@@ -4,9 +4,8 @@ import './App.css';
 import {ThemeProvider} from 'styled-components';
 import styled from 'styled-components';
 import {lightTheme, darkTheme} from './themes/themes';
-import sizes from './themes/variables';
 import {Store} from "./StoreContext";
-import InputWrapper from "./components/styled/Input";
+import Input from './components/styled/Input';
 
 const StyledWrapper = styled.div`
     align-items: center;
@@ -26,7 +25,6 @@ const StyledWrapper = styled.div`
 
 const App: React.FC = () => {
     const [isLight, setIsLight] = useState<boolean>(true);
-    // const [username, dispatch] = useReducer(reducer, '');
 
     const changeTheme = (): void => {
         setIsLight(prev => !prev);
@@ -38,11 +36,11 @@ const App: React.FC = () => {
         <div className="App">
             <ThemeProvider theme={isLight ? lightTheme : darkTheme}>
                 <StyledWrapper>
-                    <label>dupka</label>
-                    <InputWrapper
-                        onChange={(e) => dispatch({type: 'SET_USERNAME', payload: e.target.value})}
-                        width={200}
-                    />
+                    {/*<InputWrapper*/}
+                        {/*onChange={(e) => dispatch({type: 'SET_USERNAME', payload: e.target.value})}*/}
+                        {/*width={200}*/}
+                    {/*/>*/}
+                    <Input label="Login"/>
                     Twoja Nazwa: {state.username}
                 </StyledWrapper>
             </ThemeProvider>
