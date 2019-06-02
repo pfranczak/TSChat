@@ -10,6 +10,6 @@ declare module 'styled-components' {
         },
         media: {
             [name: string]: string,
-        }
+        },
     }
 }

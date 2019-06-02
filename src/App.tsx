@@ -13,6 +13,7 @@ const StyledWrapper = styled.div`
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, .25);
     display: flex;
     flex-flow: column;
+    font-family: 'Montserrat', sans-serif;
     height: 100vh;
     justify-content: center;
     width: 100vw;
