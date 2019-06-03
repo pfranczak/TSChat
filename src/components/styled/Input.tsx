@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, memo} from 'react';
 import styled from 'styled-components';
 
 const InputWrapper = styled.div<{ isTouched: boolean}>`
@@ -35,7 +35,7 @@ interface InputProps {
     label: string | number,
     defaultValue?: string | number,
 
-    onChange?(value: string | number): string | number,
+    onChange?(value: string | number): string | number | void,
 
     onBlur?(): string | number,
 }
@@ -53,9 +53,11 @@ const Input: React.FC<InputProps> = ({label, defaultValue, onChange, onBlur, ...
             </StyledLabel>
             <StyledInput
                 onFocus={() => setIsTouched(true)}
+                onChange={({target: {value}}) => onChange && onChange(value)}
+                onBlur={() => onBlur && onBlur()}
             />
         </InputWrapper>
     );
 };
 
-export default Input;
+export default memo(Input);

@@ -1,11 +1,10 @@
 import React, {useState, useContext} from 'react';
-import './App.css';
-// import ChatContainer from './components/ChatContainer';
 import {ThemeProvider} from 'styled-components';
 import styled from 'styled-components';
 import {lightTheme, darkTheme} from './themes/themes';
 import {Store} from "./StoreContext";
-import Input from './components/styled/Input';
+import './App.css';
+import LoginContainer from './components/LoginContainer';
 
 const StyledWrapper = styled.div`
     align-items: center;
@@ -37,12 +36,7 @@ const App: React.FC = () => {
         <div className="App">
             <ThemeProvider theme={isLight ? lightTheme : darkTheme}>
                 <StyledWrapper>
-                    {/*<InputWrapper*/}
-                        {/*onChange={(e) => dispatch({type: 'SET_USERNAME', payload: e.target.value})}*/}
-                        {/*width={200}*/}
-                    {/*/>*/}
-                    <Input label="Login"/>
-                    Twoja Nazwa: {state.username}
+                    <LoginContainer/>
                 </StyledWrapper>
             </ThemeProvider>
             {/*<button onClick={changeTheme}>Zmień skórkę</button>*/}
