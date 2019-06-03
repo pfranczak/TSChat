@@ -1,6 +1,7 @@
-import React, {useContext, useCallback} from 'react';
+import React, {Fragment, useContext, useCallback} from 'react';
 import {Store} from '../StoreContext';
 import Input from './styled/Input';
+import Header from './styled/Header';
 
 const LoginContainer: React.FC = () => {
     const {state, dispatch} = useContext(Store);
@@ -10,10 +11,15 @@ const LoginContainer: React.FC = () => {
     }, []);
 
     return (
-        <Input
-            label="Login"
-            onChange={onChangeHandler}
-        />
+        <Fragment>
+            <Header
+                title="Enter your nickname and join the chat!"
+            />
+            <Input
+                label="Login"
+                onChange={onChangeHandler}
+            />
+        </Fragment>
     );
 };
 
