@@ -1,8 +1,7 @@
 import React, {Fragment, useContext, useCallback} from 'react';
 import * as _ from 'lodash';
 import {Store} from '../StoreContext';
-import Input from './styled/Input';
-import Header from './styled/Header';
+import {Input, Header, Button} from './styled/StyledComponents';
 
 const LoginContainer: React.FC = () => {
     const {state, dispatch} = useContext(Store);
@@ -16,6 +15,8 @@ const LoginContainer: React.FC = () => {
         _.debounce(() => checkLoginAvailability(payload), 300);
     }, []);
 
+    const onClickHandler = useCallback(() => console.log('clicked'), []);
+
     return (
         <Fragment>
             <Header
@@ -25,6 +26,11 @@ const LoginContainer: React.FC = () => {
                 label="Login"
                 onChange={onChangeHandler}
             />
+            <Button
+                onClick={onClickHandler}
+            >
+                Join the chat
+            </Button>
         </Fragment>
     );
 };
