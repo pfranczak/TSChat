@@ -1,12 +1,14 @@
-import React, {Fragment, useContext, useCallback} from 'react';
+import React, {Fragment, useContext, useCallback, useState} from 'react';
 import * as _ from 'lodash';
 import {Store} from '../StoreContext';
 import {Input, Header, Button} from './styled/StyledComponents';
 
 const LoginContainer: React.FC = () => {
+    const [isLoginFree, setIsLoginFree] = useState(true);
     const {state, dispatch} = useContext(Store);
 
     const checkLoginAvailability = (value: string|number): void => {
+        setIsLoginFree(true);
         //TODO: check if login is available
     };
 
@@ -15,7 +17,11 @@ const LoginContainer: React.FC = () => {
         _.debounce(() => checkLoginAvailability(payload), 300);
     }, []);
 
-    const onClickHandler = useCallback(() => console.log('clicked'), []);
+    const onClickHandler = useCallback(() => {
+        if (isLoginFree) {
+            dispatch({type: 'LOG_IN'});
+        }
+    }, []);
 
     return (
         <Fragment>

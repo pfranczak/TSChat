@@ -1,4 +1,4 @@
-import React, {memo, useCallback} from 'react';
+import React, {memo} from 'react';
 import styled from 'styled-components';
 
 const StyledButton = styled.button`
@@ -20,7 +20,6 @@ interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = ({children, onClick}) => {
-    console.log('render');
     return (
         <StyledButton
             onClick={onClick}

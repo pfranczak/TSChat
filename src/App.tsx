@@ -33,12 +33,15 @@ const App: React.FC = () => {
     };
 
     const {state, dispatch} = useContext(Store);
-
+    console.log(state);
     return (
         <div className="App">
             <ThemeProvider theme={isLight ? lightTheme : darkTheme}>
                 <StyledWrapper>
-                    <LoginContainer/>
+                    {state.isLogged
+                        ? <div>DUPA</div>
+                        : <LoginContainer/>
+                    }
                 </StyledWrapper>
             </ThemeProvider>
             {/*<button onClick={changeTheme}>Zmień skórkę</button>*/}
