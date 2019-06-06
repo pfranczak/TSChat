@@ -1,10 +1,11 @@
 import React, {useState, memo} from 'react';
 import styled from 'styled-components';
 
-const InputWrapper = styled.div<{ isTouched: boolean}>`
+const InputWrapper = styled.div<{ isTouched: boolean, width: number}>`
     border: 1px solid ${({isTouched, theme: {colors: {input, secondary}}}) => isTouched ? secondary : input};
     border-radius: 5px;
     position: relative;
+    width: ${({width}) => width + 'px' || '100%'}
 `;
 
 const StyledInput = styled.input`
@@ -34,6 +35,7 @@ const StyledLabel = styled.label<{ isTouched: boolean}>`
 interface InputProps {
     label: string | number,
     defaultValue?: string | number,
+    width: number,
 
     onChange?(value: string | number): string | number | void,
 
@@ -45,6 +47,7 @@ const Input: React.FC<InputProps> = ({label, defaultValue, onChange, onBlur, ...
     return (
         <InputWrapper
             isTouched={isTouched}
+            width={props.width}
         >
             <StyledLabel
                 isTouched={isTouched}

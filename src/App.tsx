@@ -5,6 +5,7 @@ import {lightTheme, darkTheme} from './themes/themes';
 import {Store} from './StoreContext';
 import './App.css';
 import LoginContainer from './components/LoginContainer';
+import ChatContainer from './components/Chat/ChatContainer';
 
 const StyledWrapper = styled.div`
     align-items: center;
@@ -19,27 +20,25 @@ const StyledWrapper = styled.div`
     width: 100vw;
     
     ${({theme: {media}}) => media.medium} {
-        height: 400px;
-        padding: 0 125px;
-        width: 600px;
+        height: 70vh;
+        width: 70vw;
     }
 `;
 
 const App: React.FC = () => {
     const [isLight, setIsLight] = useState<boolean>(true);
+    const {state, dispatch} = useContext(Store);
 
     const changeTheme = (): void => {
         setIsLight(prev => !prev);
     };
 
-    const {state, dispatch} = useContext(Store);
-    console.log(state);
     return (
         <div className="App">
             <ThemeProvider theme={isLight ? lightTheme : darkTheme}>
                 <StyledWrapper>
                     {state.isLogged
-                        ? <div>DUPA</div>
+                        ? <ChatContainer />
                         : <LoginContainer/>
                     }
                 </StyledWrapper>
