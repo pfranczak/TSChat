@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import OnlineUsers from './OnlineUsers';
-import MessagesContainer from './MessagesContainer';
+import MessagesContainer from './Messages/MessagesContainer';
 import {USER_STATUS} from '../../contants';
 import {UserInterface} from '../../interfaces';
 
