@@ -8,13 +8,14 @@ const StyledUserList = styled.div`
     border-right: 1px solid ${({theme: {colors: {secondary}}}) => secondary};
     box-sizing: border-box;
     flex: 1;
+    overflow: hidden;
     padding: 10px;
 `;
 
 const StyledItemsWrapper = styled.div`
-    height: 100%;
+    max-height: 84%;
     overflow-x: hidden;
-    overflow-y: scroll; 
+    overflow-y: scroll;
 `;
 
 const StyledItem = styled.div`
@@ -28,6 +29,7 @@ const StyledH1 = styled.h1`
     color: ${({theme: {colors: {secondary}}}) => secondary};
     font-size: 1.2em;
     margin: 0;
+    max-height: 14%;
 `;
 
 const StyledHR = styled.hr`
