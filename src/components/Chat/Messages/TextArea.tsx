@@ -28,8 +28,9 @@ const StyledCharContainer = styled.div`
 `;
 
 const StyledInputContainer = styled.div`
+    box-sizing: border-box;
+    margin: 0 20px;
     position: relative;
-    width: 95%;
 `;
 
 const TextArea: React.FC = props => {
