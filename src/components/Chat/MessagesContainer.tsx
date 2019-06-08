@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const StyledMessagesList = styled.div`
-    background-color: #00ff00;
     border-radius: 0 7px 7px 0;
     flex: 3;
     height: 100%;
