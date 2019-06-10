@@ -7,9 +7,13 @@ import {UserInterface} from '../../interfaces';
 
 const StyledContainer = styled.div`
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     height: 100%;
     width: 100%;
+    
+    ${({theme: {media}}) => media.medium} {
+        flex-direction: row;
+    }
 `;
 
 const ChatContainer: React.FC = () => {
