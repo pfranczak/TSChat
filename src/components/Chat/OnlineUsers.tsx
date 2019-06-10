@@ -6,11 +6,11 @@ import {Arrow, Status} from '../styled/StyledComponents';
 
 const StyledUserList = styled.div`
     border-radius: 7px 0 0 7px;
-    border-right: 1px solid ${({theme: {colors: {secondary}}}) => secondary};
     box-sizing: border-box;
     padding: 10px;
     
     ${({theme: {media}}) => media.medium} {
+        border-right: 1px solid ${({theme: {colors: {secondary}}}) => secondary};
         flex-direction: row;
         flex: 1;
         overflow: hidden;
@@ -74,6 +74,10 @@ const StyledArrow = styled(Arrow)`
     position: absolute;
     right: 2px;
     top: 25%;
+    
+    ${({theme: {media}}) => media.medium} {
+        display: none;
+    }
 `;
 
 const OnlineUsers: React.FC<{usersList: Array<UserInterface>}> = ({usersList}) => {

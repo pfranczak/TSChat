@@ -6,7 +6,10 @@ import MessagesList from './MessagesList';
 const StyledMessagesContainer = styled.div`
     border-radius: 0 7px 7px 0;
     flex: 3;
-    height: 100%;
+    
+    ${({theme: {media}}) => media.medium} {
+        height: 100%;
+    }
 `;
 
 const dateToString = (date: Date) => {
