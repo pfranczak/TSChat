@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 import {UserInterface} from '../../interfaces';
 import {USER_STATUS} from '../../contants';
-import {Arrow} from "../styled/StyledComponents";
+import {Arrow, Status} from '../styled/StyledComponents';
 
 const StyledUserList = styled.div`
     border-radius: 7px 0 0 7px;
@@ -35,8 +35,19 @@ const StyledItemsWrapper = styled.div<{isFull: boolean}>`
 `;
 
 const StyledItem = styled.div`
+    align-items: baseline;
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 10px 4px 0;
+    
+    ${({theme: {media}}) => media.medium} {
+        padding-right: 0;
+    }
+`;
+
+const StyledUsernameWrapper = styled.span`
     overflow-x: hidden;
-    padding: 4px 0;
+    padding-right: 5px;
     text-overflow: ellipsis;
     white-space: nowrap;
 `;
@@ -78,12 +89,15 @@ const OnlineUsers: React.FC<{usersList: Array<UserInterface>}> = ({usersList}) =
             </StyledH1>
             <StyledHR/>
             <StyledItemsWrapper isFull={isFull}>
-            {usersList.map(({username, status}) => {
+            {usersList.map(({username}) => {
                 return <StyledItem
                     key={username}
                     title={username}
                 >
-                    {username}{USER_STATUS[status]}
+                    <StyledUsernameWrapper>
+                        {username}
+                    </StyledUsernameWrapper>
+                    <Status/>
                 </StyledItem>
             })}
             </StyledItemsWrapper>
