@@ -1,10 +1,12 @@
-import React, {Fragment, useContext, useCallback, useState} from 'react';
+import React, { useContext, useCallback, useState} from 'react';
 import * as _ from 'lodash';
 import styled from 'styled-components';
 import {Store} from '../StoreContext';
 import {Input, Header, Button} from './styled/StyledComponents';
 
 const StyledWrapper = styled.div`
+    padding: 0 15px;
+    
     ${({theme: {media}}) => media.medium} {
             align-items: center;
             display: flex;
@@ -16,7 +18,7 @@ const StyledWrapper = styled.div`
 
 const LoginContainer: React.FC = () => {
     const [isLoginFree, setIsLoginFree] = useState<boolean>(true);
-    const {state, dispatch} = useContext(Store);
+    const {dispatch} = useContext(Store);
 
     const checkLoginAvailability = (value: string | number): void => {
         setIsLoginFree(true);

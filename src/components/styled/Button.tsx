@@ -11,6 +11,11 @@ const StyledButton = styled.button`
     margin: 10px 0;
     padding: 10px 20px;
     text-transform: uppercase;
+    width: 100%;
+    
+    ${({theme: {media}}) => media.medium} {
+        width: unset;
+    }
 `;
 
 interface ButtonProps {

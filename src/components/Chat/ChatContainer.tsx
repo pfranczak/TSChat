@@ -12,7 +12,7 @@ const StyledContainer = styled.div`
     width: 100%;
 `;
 
-const ChatContainer: React.FC = (props) => {
+const ChatContainer: React.FC = () => {
     const [users, setUsers] = useState<Array<UserInterface>>([]);
 
     useEffect(() => {

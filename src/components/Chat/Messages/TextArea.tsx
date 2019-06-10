@@ -1,6 +1,5 @@
-import React, {useState, useCallback, Fragment} from 'react';
+import React, {useState, useCallback} from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 
 const MAX_MESSAGE_LENGTH = 300;
 

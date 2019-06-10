@@ -35,7 +35,7 @@ const StyledH1 = styled.h1`
 const StyledHR = styled.hr`
     background-color: ${({theme: {colors: {secondary}}}) => secondary};
     border: none;
-    height: 1px;
+    height: 1.5px;
     margin: 5px 0;
 `;
 

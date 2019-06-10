@@ -4,8 +4,13 @@ import styled from 'styled-components';
 const InputWrapper = styled.div<{ isTouched: boolean, width: number}>`
     border: 1px solid ${({isTouched, theme: {colors: {input, secondary}}}) => isTouched ? secondary : input};
     border-radius: 5px;
+    box-sizing: border-box;
     position: relative;
-    width: ${({width}) => width + 'px' || '100%'}
+    width: 100%;
+    
+    ${({theme: {media}}) => media.medium} {
+        width: ${({width}) => width + 'px' || '100%'}
+    }
 `;
 
 const StyledInput = styled.input`
